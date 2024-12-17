@@ -1,11 +1,16 @@
 import QtQuick
 import QtQuick.Controls.Basic
+import QmlCppExample
 
 Window {
     width: 640
     height: 480
     visible: true
     title: qsTr("QML and Cpp integration")
+
+    LumberSawController {
+        id: sawController
+    }
 
     Column {
         anchors.centerIn: parent
@@ -30,9 +35,9 @@ Window {
             width: 200
             height: 200
 
-            playing: false
+            playing: sawController.isWorking
             source: "assets/circular-saw.gif"
-            speed: slider.value
+            speed: sawController.sawSpeed
         }
 
         Row {
@@ -42,7 +47,7 @@ Window {
                 text: "Start"
 
                 onClicked: {
-                    sawImage.playing = true
+                    sawController.start();
                 }
             }
 
@@ -50,7 +55,7 @@ Window {
                 text: "Stop"
 
                 onClicked: {
-                    sawImage.playing = false
+                    sawController.stop();
                 }
             }
         }
@@ -61,9 +66,13 @@ Window {
             width: 200
 
             from: 0
-            to: 5
+            to: 10
 
-            value: 1
+            value: sawController.sawSpeed
+
+            onValueChanged : {
+                sawController.sawSpeed = value
+            }
         }
     }
 

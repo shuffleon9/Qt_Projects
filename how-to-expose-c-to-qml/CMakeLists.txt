@@ -16,6 +16,7 @@ qt_add_qml_module(appqml-cpp-example
     VERSION 1.0
     QML_FILES main.qml 
     RESOURCES assets/circular-saw.gif assets/built-with-qt-badge.png
+    SOURCES lumbersawcontroller.h lumbersawcontroller.cpp
 )
 
 set_target_properties(appqml-cpp-example PROPERTIES
