@@ -17,6 +17,10 @@ qt_add_qml_module(appQt6_App_LiveWeather
     VERSION 1.0
     QML_FILES
         Main.qml
+        Requester.qml
+        LiveLocationModel.qml
+        LiveWeatherModel.qml
+        OpenMeteo.qml
 
     RESOURCES
         assets/icons/icon0.svg
