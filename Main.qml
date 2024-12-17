@@ -81,6 +81,40 @@ Window {
                                               })
             }
 
+            ListModel {
+                id: locationModel
+
+                ListElement {
+                    locationText: "Berlin"
+                    weatherRequest: "GET Weather for Berlin"
+                }
+                ListElement {
+                    locationText: "Brisbane"
+                    weatherRequest: "GET Weather for Brisbane"
+                }
+                ListElement {
+                    locationText: "London"
+                    weatherRequest: "GET Weather for London"
+                }
+                ListElement {
+                    locationText: "Paris"
+                    weatherRequest: "GET Weather for Paris"
+                }
+            }
+
+            ComboBox {
+                id: locationComboBox
+
+                Layout.preferredWidth: window.width / 2
+
+                model: locationModel
+
+                textRole: "locationText"
+                valueRole: "weatherRequest"
+
+                onActivated: console.log(locationComboBox.currentText, locationComboBox.currentValue)
+            }
+
             ListView {
                 id: forecastListView
 
