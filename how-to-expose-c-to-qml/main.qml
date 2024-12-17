@@ -8,10 +8,6 @@ Window {
     visible: true
     title: qsTr("QML and Cpp integration")
 
-    LumberSawController {
-        id: sawController
-    }
-
     Column {
         anchors.centerIn: parent
         spacing: 10
@@ -23,56 +19,28 @@ Window {
             font.pointSize: 18
         }
 
-        Text {
-            text: "Saw 1"
-            anchors.horizontalCenter: parent.horizontalCenter
-
-            font.pointSize: 14
-        }
-
-        AnimatedImage {
-            id: sawImage
-            width: 200
-            height: 200
-
-            playing: sawController.isWorking
-            source: "assets/circular-saw.gif"
-            speed: sawController.sawSpeed
-        }
 
         Row {
-            spacing: 10
+            spacing: 20
 
-            Button {
-                text: "Start"
+            LumberMillBlock {
+                name: "Saw 1"
 
-                onClicked: {
-                    sawController.start();
+                controller: LumberSawController {
+                    id : sawController1
+                    sawSpeed: 2
                 }
             }
 
-            Button {
-                text: "Stop"
+            LumberMillBlock {
+                name: "Saw 2"
 
-                onClicked: {
-                    sawController.stop();
+                controller: LumberSawController {
+                    id : sawController2
+                    sawSpeed: 5
                 }
             }
-        }
 
-        Slider {
-            id: slider
-
-            width: 200
-
-            from: 0
-            to: 10
-
-            value: sawController.sawSpeed
-
-            onValueChanged : {
-                sawController.sawSpeed = value
-            }
         }
     }
 

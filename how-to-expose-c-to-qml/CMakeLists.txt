@@ -14,7 +14,7 @@ qt_add_executable(appqml-cpp-example
 qt_add_qml_module(appqml-cpp-example
     URI QmlCppExample
     VERSION 1.0
-    QML_FILES main.qml 
+    QML_FILES main.qml LumberMillBlock.qml
     RESOURCES assets/circular-saw.gif assets/built-with-qt-badge.png
     SOURCES lumbersawcontroller.h lumbersawcontroller.cpp
 )
