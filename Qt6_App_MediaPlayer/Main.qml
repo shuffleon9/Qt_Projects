@@ -48,7 +48,7 @@ Window {
             songIndex: 0
             title: "Eine Kleine Nachtmusik"
             authorName: "Wolfgang Amadeus Mozart"
-            imageColor: "red"
+            imageSource: "assets/images/song_1.jpg"
         }
 
         AudioInfoBox {
@@ -64,7 +64,7 @@ Window {
             songIndex: 1
             title: "Symphone No. 5"
             authorName: "Ludwig Van Beethoven"
-            imageColor: "yellow"
+            imageSource: "assets/images/song_2.jpg"
         }
 
         AudioInfoBox {
@@ -80,7 +80,8 @@ Window {
             songIndex: 2
             title: "Air on the G String"
             authorName: "Johann Sebastian Bach"
-            imageColor: "purple"
+            imageSource: "assets/images/song_3.jpg"
+            videoSource: "D:/Workspaces_Git/MyGitHub/Qt_Projects/Qt6_App_MediaPlayer/assets/videos/video_1.avi"
         }
     }
 
@@ -101,35 +102,35 @@ Window {
 
             spacing: 20
 
-            TextButton {
+            ImageButton {
                 id: previousButton
 
-                width: 50
-                height: 50
+                width: 64
+                height: 64
 
-                text: "<"
+                source: "assets/icons/previous_icon.png"
 
                 onClicked: playerController.switchToPreviousSong()
             }
 
-            TextButton {
+            ImageButton {
                 id: playPauseButton
 
-                width: 75
-                height: 50
+                width: 64
+                height: 64
 
-                text: playerController.playing ? "Pause" : "Play"
+                source: playerController.playing ? "assets/icons/pause_icon.png" : "assets/icons/play_icon.png"
 
                 onClicked: playerController.playPause()
             }
 
-            TextButton {
+            ImageButton {
                 id: nextButton
 
-                width: 50
-                height: 50
+                width: 64
+                height: 64
 
-                text: ">"
+                source: "assets/icons/next_icon.png"
 
                 onClicked: playerController.switchToNextSong()
             }
