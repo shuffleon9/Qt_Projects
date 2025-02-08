@@ -11,6 +11,7 @@ qt_standard_project_setup(REQUIRES 6.5)
 
 qt_add_executable(appQt6_App_MediaPlayer
     main.cpp
+    PlayerController.h PlayerController.cpp
 )
 
 qt_add_qml_module(appQt6_App_MediaPlayer
