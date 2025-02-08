@@ -19,6 +19,9 @@ qt_add_qml_module(appQt6_App_MediaPlayer
     VERSION 1.0
     QML_FILES Main.qml AudioInfoBox.qml ImageButton.qml
 
+    SOURCES
+    AudioInfo.cpp AudioInfo.h
+
     RESOURCES
         assets/images/song_1.jpg
         assets/images/song_2.jpg
@@ -31,6 +34,10 @@ qt_add_qml_module(appQt6_App_MediaPlayer
         assets/icons/pause_icon.png
 
         assets/videos/video_1.avi
+
+        assets/audio/AnothersArmsRingtone.m4a
+        assets/audio/AuRevoirRingtone.m4a
+        assets/audio/BurningBridgesRingtone.m4a
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

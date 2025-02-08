@@ -46,10 +46,13 @@ Window {
                 margins: 20
             }
 
-            songIndex: 0
-            title: "Eine Kleine Nachtmusik"
-            authorName: "Wolfgang Amadeus Mozart"
-            imageSource: "assets/images/song_1.jpg"
+            infoProvider {
+                songIndex: 0
+                title: "Eine Kleine Nachtmusik"
+                authorName: "Wolfgang Amadeus Mozart"
+                imageSource: "assets/images/song_1.jpg"
+                audioSource: "D:/Workspaces_Git/MyGitHub/Qt_Projects/Qt6_App_MediaPlayer/assets/audio/AnothersArmsRingtone.m4a"
+            }
         }
 
         AudioInfoBox {
@@ -62,10 +65,13 @@ Window {
                 margins: 20
             }
 
-            songIndex: 1
-            title: "Symphone No. 5"
-            authorName: "Ludwig Van Beethoven"
-            imageSource: "assets/images/song_2.jpg"
+            infoProvider{
+                songIndex: 1
+                title: "Symphone No. 5"
+                authorName: "Ludwig Van Beethoven"
+                imageSource: "assets/images/song_2.jpg"
+                audioSource: "D:/Workspaces_Git/MyGitHub/Qt_Projects/Qt6_App_MediaPlayer/assets/audio/AuRevoirRingtone.m4a"
+            }
         }
 
         AudioInfoBox {
@@ -78,11 +84,14 @@ Window {
                 margins: 20
             }
 
-            songIndex: 2
-            title: "Air on the G String"
-            authorName: "Johann Sebastian Bach"
-            imageSource: "assets/images/song_3.jpg"
-            videoSource: "D:/Workspaces_Git/MyGitHub/Qt_Projects/Qt6_App_MediaPlayer/assets/videos/video_1.avi"
+            infoProvider {
+                songIndex: 2
+                title: "Air on the G String"
+                authorName: "Johann Sebastian Bach"
+                imageSource: "assets/images/song_3.jpg"
+                videoSource: "D:/Workspaces_Git/MyGitHub/Qt_Projects/Qt6_App_MediaPlayer/assets/videos/video_1.avi"
+                audioSource: "D:/Workspaces_Git/MyGitHub/Qt_Projects/Qt6_App_MediaPlayer/assets/audio/BurningBridgesRingtone.m4a"
+            }
         }
     }
 
