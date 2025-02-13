@@ -4,8 +4,8 @@ import com.PlayerController
 Window {
     id: root
 
-    width: 640
-    height: 480
+    width: 480
+    height: 640
 
     visible: true
 
@@ -22,6 +22,24 @@ Window {
 
         height: 50
         color: "#5F8575"
+
+        ImageButton {
+            anchors {
+                right: parent.right
+                verticalCenter: parent.verticalCenter
+                rightMargin: 20
+
+            }
+
+            width: 32
+            height: 32
+            source: "assets/icons/menu_icon.png"
+
+            onClicked: {
+                playlistPanel.hidden = !playlistPanel.hidden
+            }
+        }
+
     }
 
     Rectangle {
@@ -37,7 +55,7 @@ Window {
         color: "#1e1e1e"
 
         AudioInfoBox {
-            id: firstSong
+            id: songInfo
 
             anchors {
                 verticalCenter: parent.verticalCenter
@@ -45,54 +63,8 @@ Window {
                 right: parent.right
                 margins: 20
             }
-
-            infoProvider {
-                songIndex: 0
-                title: "Eine Kleine Nachtmusik"
-                authorName: "Wolfgang Amadeus Mozart"
-                imageSource: "assets/images/song_1.jpg"
-                audioSource: "D:/Workspaces_Git/MyGitHub/Qt_Projects/Qt6_App_MediaPlayer/assets/audio/AnothersArmsRingtone.m4a"
-            }
         }
 
-        AudioInfoBox {
-            id: secondSong
-
-            anchors {
-                verticalCenter: parent.verticalCenter
-                left: parent.left
-                right: parent.right
-                margins: 20
-            }
-
-            infoProvider{
-                songIndex: 1
-                title: "Symphone No. 5"
-                authorName: "Ludwig Van Beethoven"
-                imageSource: "assets/images/song_2.jpg"
-                audioSource: "D:/Workspaces_Git/MyGitHub/Qt_Projects/Qt6_App_MediaPlayer/assets/audio/AuRevoirRingtone.m4a"
-            }
-        }
-
-        AudioInfoBox {
-            id: thirdSong
-
-            anchors {
-                verticalCenter: parent.verticalCenter
-                left: parent.left
-                right: parent.right
-                margins: 20
-            }
-
-            infoProvider {
-                songIndex: 2
-                title: "Air on the G String"
-                authorName: "Johann Sebastian Bach"
-                imageSource: "assets/images/song_3.jpg"
-                videoSource: "D:/Workspaces_Git/MyGitHub/Qt_Projects/Qt6_App_MediaPlayer/assets/videos/video_1.avi"
-                audioSource: "D:/Workspaces_Git/MyGitHub/Qt_Projects/Qt6_App_MediaPlayer/assets/audio/BurningBridgesRingtone.m4a"
-            }
-        }
     }
 
     Rectangle {
@@ -111,6 +83,8 @@ Window {
             anchors.centerIn: parent
 
             spacing: 20
+            enabled: !!PlayerController.currentSong
+            opacity: enabled? 1 : 0.3
 
             ImageButton {
                 id: previousButton
@@ -146,4 +120,15 @@ Window {
             }
         }
     }
+
+    PlaylistPanel {
+        id: playlistPanel
+
+        anchors {
+            top: topbar.bottom
+        }
+
+        x: hidden ? parent.width : parent.width - width
+    }
+
 }
