@@ -1,5 +1,7 @@
 import QtQuick
+import QtQuick.Controls
 import com.PlayerController
+import com.ArtistModel
 
 Window {
     id: root
@@ -131,4 +133,36 @@ Window {
         x: hidden ? parent.width : parent.width - width
     }
 
+    Column {
+        width: 250
+
+        ListView {
+            id: listView
+
+            width: parent.width
+            height: 400
+
+            model: ArtistModel
+
+            delegate: Rectangle {
+                width: parent.width
+                height: 25
+
+                Row {
+                    spacing: 10
+                    Text {text: model.name; font.bold: true}
+                    Text {text: "Songs: " + model.songCount}
+                }
+            }
+        }
+
+        Button {
+            anchors.top: listView.bottom
+
+            text: "Add"
+            onClicked: {
+                ArtistModel.addArtist("Imagine Dragons", 3);
+            }
+        }
+    }
 }

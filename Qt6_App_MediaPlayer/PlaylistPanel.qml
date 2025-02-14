@@ -48,9 +48,9 @@ Rectangle {
 
             required property string audioTitle
             required property string audioAuthorName
-            required property url audioSource
-            required property url audioImageSource
-            required property url audioVideoSource
+            // required property url audioSource
+            // required property url audioImageSource
+            // required property url audioVideoSource
             required property int index
 
             width: listview.width

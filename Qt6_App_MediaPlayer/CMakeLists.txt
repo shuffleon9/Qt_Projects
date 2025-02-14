@@ -21,6 +21,7 @@ qt_add_qml_module(appQt6_App_MediaPlayer
 
     SOURCES
     AudioInfo.cpp AudioInfo.h
+    ArtistModel.h ArtistModel.cpp
 
     RESOURCES
     assets/images/song_1.jpg

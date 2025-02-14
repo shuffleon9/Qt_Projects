@@ -2,6 +2,7 @@
 #include <QIcon>
 #include <QQmlApplicationEngine>
 #include "PlayerController.h"
+#include "ArtistModel.h"
 
 int main(int argc, char *argv[])
 {
@@ -11,6 +12,9 @@ int main(int argc, char *argv[])
 
     PlayerController* playerController = new PlayerController(&app);
     qmlRegisterSingletonInstance("com.PlayerController", 1, 0, "PlayerController", playerController);
+
+    ArtistModel artistModel;
+    qmlRegisterSingletonInstance("com.ArtistModel", 1, 0, "ArtistModel", &artistModel);
 
     QQmlApplicationEngine engine;
     QObject::connect(
